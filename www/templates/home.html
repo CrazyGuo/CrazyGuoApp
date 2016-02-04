@@ -1,0 +1,31 @@
+<ion-view class="index">
+  <ion-nav-title>
+    <div class="topsearch">
+      <div class="logo"><img src="img/fixed/logo.png"></div>
+      <label class="item item-input">
+        <input type="text" placeholder="请输入内容" ng-click="getSearch()" readonly/>
+      </label>
+      <button ng-click="getSearch()" class="button button-icon icon ion-ios-search" style="float:left;">
+      </button>
+    </div>
+  </ion-nav-title>
+
+  <ion-content scroll="false" class="has-tabs">
+    <tab-slide-box tab="0">
+      <div class="column"> <div class="tsb-icons">
+        <div class="tsb-ic-wrp">
+          <ion-scroll direction="x" scrollbar-x="false" class="tsb-hscroll" delegate-handle="tabSlider">
+            <a href="javascript:;" class="{{::tab.icon}}" ng-repeat="tab in ::tabs" on-finish-render="test()">{{::tab.text}}</a>
+          </ion-scroll>
+        </div>
+      </div>
+        <a class="button icon ion-plus"></a></div>
+      <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)" delegate-handle="tabSlider">
+        <ion-slide>
+          <ng-include src=' "templates/main.html" '></ng-include>
+        </ion-slide>
+      </ion-slide-box>
+    </tab-slide-box>
+  </ion-content>
+
+</ion-view>

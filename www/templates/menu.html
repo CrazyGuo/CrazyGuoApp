@@ -1,11 +1,9 @@
-<ion-side-menus>      
+<ion-side-menus>
   <ion-side-menu-content drag-content="false">
-    <ion-nav-bar><!-- ng-class="{'indexbar': $root.changeTop}"-->
-      <!--<ion-nav-back-button class="button-icon ion-ios-arrow-back" ng-click="toClose()">
-      </ion-nav-back-button>-->
+    <ion-nav-bar>
     </ion-nav-bar>
     <ion-nav-view animation="slide-left-right"></ion-nav-view>
-  </ion-side-menu-content> 
+  </ion-side-menu-content>
 
   <ion-side-menu side="right" width="200">
     <ion-header-bar class="bar bar-header frame">
@@ -14,44 +12,16 @@
       <h1 class="title" ng-if="2==menuShow">款式</h1>
       <h1 class="title" ng-if="3==menuShow">价格</h1>
     </ion-header-bar>
-    <!--<ion-content ng-show="4==$root.menuShow" >    
-        <div class="empty"></div>
-        <div>   
-            <div class="empty"></div>
-            <div class="list">
-              <ion-radio ng-model="$root.selected.btype" name="btype" menu-toggle="right" ng-value="$index" ng-repeat="item in $root.serchMenu.btypes">{{item.name}}</ion-radio> 
-            </div> 
-        </div>
-    </ion-content>
-    <ion-content ng-show="1==menuShow" >    
-        <div class="empty"></div>
-        <ion-radio class="unlimited" ng-model="$root.selected.brand" name="brand" menu-toggle="right" ng-value="-1">不限</ion-radio>
-        <div ng-repeat="brands in $root.brandList[1]" ng-init="i=$index">   
-           <div class="item item-divider letter"> {{brands.key}}</div>
-            <div class="list">
-              <ion-radio ng-model="$root.selected.brand" name="brand" menu-toggle="right" value="{{i}}-{{$index}}" ng-repeat="brand in brands.list">{{brand.word}}</ion-radio> 
-            </div> 
-        </div>
-    </ion-content>
-    <ion-content ng-show="2==$root.menuShow" >
-        <div>
-        <div class="empty"></div>
-        <ion-radio class="unlimited" ng-model="selected.type" name="type" menu-toggle="right" ng-value="-1">不限</ion-radio>
-            <div class="list">
-              <ion-radio ng-model="$root.selected.type" name="type" menu-toggle="right" ng-value="$index" ng-repeat="type in $root.serchMenu.types">{{type.name}}</ion-radio>
-            </div> 
-        </div>
-    </ion-content>-->
-    
+
     <ion-content ng-show="3==menuShow" >
         <div>
         <div class="empty"></div>
         <ion-radio class="unlimited line" ng-model="$root.selected.price" name="price" menu-toggle="right" ng-value="-1">不限</ion-radio>
             <div class="list">
               <ion-radio ng-model="$root.selected.price" name="price" menu-toggle="right" ng-value="$index" ng-repeat="price in ::$root.serchMenu.prices">{{price.name}}</ion-radio>
-            </div> 
+            </div>
         </div>
     </ion-content>
   </ion-side-menu>
-  
+
 </ion-side-menus>

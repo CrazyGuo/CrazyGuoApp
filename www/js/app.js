@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('ionicApp', ['ionic','ionicApp.controllers','ngCordova'])
+angular.module('ionicApp', ['ionic','tabSlideBox','ionicApp.controllers','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -46,7 +46,8 @@ angular.module('ionicApp', ['ionic','ionicApp.controllers','ngCordova'])
                 url: "/home",
                 views: {
                     "home-tab": {
-                        templateUrl: "templates/home.html"
+                        templateUrl: "templates/home.html",
+                        controller: "home"
                     }
                 }
             });
@@ -116,6 +117,11 @@ angular.module("ionicApp.controllers", ['ionicApp.services'])
     catch (u)
     {
         console.log(u)
+    }
+} ])
+.controller("home", ["$scope", "$state", function (e, o) {
+    e.getSearch = function () {
+        o.go("search")
     }
 } ]);
 
